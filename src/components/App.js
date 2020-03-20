@@ -42,7 +42,6 @@ class MovieList extends React.Component {
     return (
       <div className="col-8 col-sm-9">
         <div className="row">
-          {/* <p> {!this.state.willWatch ? "NOT will" : "will"} </p> */}
           {movies.map(function(movie) {
             return (
               <div className="offset-1 col-10 offset-sm-0 col-sm-6 mt-4" key={movie.id}>

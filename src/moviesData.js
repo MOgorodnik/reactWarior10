@@ -1,5 +1,53 @@
 export const moviesData = [
     {
+      vote_count: 0,
+      id: 517745,
+      video: false,
+      vote_average: 0,
+      title: "The First",
+      popularity: 9.829438,
+      poster_path: "/scSLVsmQdD6kVFYskp84gYLpX5M.jpg",
+      original_language: "ru",
+      original_title: "ÐÐµÑÐ²ÑÐµ",
+      backdrop_path: "/ecHD0rmx8l4eZVSISLJVAgAaODU.jpg",
+      adult: false,
+      overview:
+        "Vasily Pronchishchev and Vasily Chelyuskin were young lieutenants of the Russia fleet, who set out from Yakutsk along the Lena River to the Arctic Ocean on a sailing ship under the leadership of the commander Vitus Bering in the summer of 1735. Contrary to the imperial prohibition, incredible trials and deadly danger lying ahead of all the members of this expedition, a young girl enamored with one of the characters got onto this ship. However, neither storms or severe northern frosts and hunger were able to stop them, since fulfilling of their duty, reaching of the most northeastern point of Eurasia and putting of the vast Arctic territories on the world maps were their main purpose in life.",
+      release_date: "2018-06-07"
+    },
+    {
+      vote_count: 2,
+      id: 502897,
+      video: false,
+      vote_average: 0,
+      title: "Leto",
+      popularity: 8.567759,
+      poster_path: "/syl3gKnmGEmV20ObA8JHxPU8RvQ.jpg",
+      original_language: "ru",
+      original_title: "ÐÐµÑÐ¾",
+      backdrop_path: "/eFod8dTZVH3SFDF13V5ls2Hb00W.jpg",
+      adult: false,
+      overview:
+        "Leningrad, one summer in the early eighties. Smuggling LPâs by Lou Reed and David Bowie, the underground rock scene is boiling ahead of the Perestroika. Mike and his beautiful wife Natasha meet with young Viktor TsoÃ¯. Together with friends, they will change the destiny of rockânâroll in the Soviet Union.",
+      release_date: "2018-06-07"
+    },
+    {
+      vote_count: 5,
+      id: 440626,
+      video: false,
+      vote_average: 5.8,
+      title: "Sobibor",
+      popularity: 8.662257,
+      poster_path: "/rGOB5Xm0l0zAWAzVzeTnOPDMVQA.jpg",
+      original_language: "ru",
+      original_title: "Ð¡Ð¾Ð±Ð¸Ð±Ð¾Ñ",
+      backdrop_path: "/5KhMpFJdnOAsDmIpT0TINUNDt8L.jpg",
+      adult: false,
+      overview:
+        "Based on the true story, international historical project âSobiborâ is dedicated to the heroism of the Soviet o cer Alexander Pechersky. During the great Patriotic war, being in a Nazi concentration camp Sobibor he managed to do the impossible â for only three weeks to organize a revolt and mass escape of the prisoners. Part of the escapees were caught and shot, and the rest led by Pechersky managed to escape and joined the partisans.",
+      release_date: "2018-05-03"
+    },
+    {
       vote_count: 4592,
       id: 299536,
       video: false,
@@ -270,54 +318,6 @@ export const moviesData = [
       overview:
         "Max, a macho, solitary Rottweiler police dog is ordered to go undercover as a primped show dog in a prestigious Dog Show, along with his human partner, to avert a disaster from happening.",
       release_date: "2018-05-10"
-    },
-    {
-      vote_count: 0,
-      id: 517745,
-      video: false,
-      vote_average: 0,
-      title: "The First",
-      popularity: 9.829438,
-      poster_path: "/scSLVsmQdD6kVFYskp84gYLpX5M.jpg",
-      original_language: "ru",
-      original_title: "ÐÐµÑÐ²ÑÐµ",
-      backdrop_path: "/ecHD0rmx8l4eZVSISLJVAgAaODU.jpg",
-      adult: false,
-      overview:
-        "Vasily Pronchishchev and Vasily Chelyuskin were young lieutenants of the Russia fleet, who set out from Yakutsk along the Lena River to the Arctic Ocean on a sailing ship under the leadership of the commander Vitus Bering in the summer of 1735. Contrary to the imperial prohibition, incredible trials and deadly danger lying ahead of all the members of this expedition, a young girl enamored with one of the characters got onto this ship. However, neither storms or severe northern frosts and hunger were able to stop them, since fulfilling of their duty, reaching of the most northeastern point of Eurasia and putting of the vast Arctic territories on the world maps were their main purpose in life.",
-      release_date: "2018-06-07"
-    },
-    {
-      vote_count: 2,
-      id: 502897,
-      video: false,
-      vote_average: 0,
-      title: "Leto",
-      popularity: 8.567759,
-      poster_path: "/syl3gKnmGEmV20ObA8JHxPU8RvQ.jpg",
-      original_language: "ru",
-      original_title: "ÐÐµÑÐ¾",
-      backdrop_path: "/eFod8dTZVH3SFDF13V5ls2Hb00W.jpg",
-      adult: false,
-      overview:
-        "Leningrad, one summer in the early eighties. Smuggling LPâs by Lou Reed and David Bowie, the underground rock scene is boiling ahead of the Perestroika. Mike and his beautiful wife Natasha meet with young Viktor TsoÃ¯. Together with friends, they will change the destiny of rockânâroll in the Soviet Union.",
-      release_date: "2018-06-07"
-    },
-    {
-      vote_count: 5,
-      id: 440626,
-      video: false,
-      vote_average: 5.8,
-      title: "Sobibor",
-      popularity: 8.662257,
-      poster_path: "/rGOB5Xm0l0zAWAzVzeTnOPDMVQA.jpg",
-      original_language: "ru",
-      original_title: "Ð¡Ð¾Ð±Ð¸Ð±Ð¾Ñ",
-      backdrop_path: "/5KhMpFJdnOAsDmIpT0TINUNDt8L.jpg",
-      adult: false,
-      overview:
-        "Based on the true story, international historical project âSobiborâ is dedicated to the heroism of the Soviet o cer Alexander Pechersky. During the great Patriotic war, being in a Nazi concentration camp Sobibor he managed to do the impossible â for only three weeks to organize a revolt and mass escape of the prisoners. Part of the escapees were caught and shot, and the rest led by Pechersky managed to escape and joined the partisans.",
-      release_date: "2018-05-03"
     }
   ];
   

@@ -27,13 +27,16 @@ class MovieItem extends React.Component {
         />
         <div className="card-body">
           {/* {console.log("I CAN NOT see this state => ",this.state)} */}
-          {/* <p> {this.state.willWatch ? "NOT will" : "will"} </p> */}
+          <p> {this.state.willWatch ? "NOT will" : "will"} </p>
           <h6 className="card-title">{movie.title}</h6>
           <div className="d-flex justify-content-between align-items-center">
             <p className="mb-0">Rating: {movie.vote_average}</p>
+          </div>
+
+          <div className="d-flex justify-content-end align-items-center mt-3">
             <button
               type="button"
-              className="btn btn-warning"
+              className="btn btn-info btn-sm"
               onClick={() => {
                 console.log("Clickkk", this.state.willWatch);
                 this.state.willWatch
@@ -46,6 +49,14 @@ class MovieItem extends React.Component {
               }}
             >
               Will Watch
+            </button>
+            <button
+              type="button"
+              title="{movie.title}"
+              className="btn btn-danger btn-sm mx-2"
+            //   onClick={removeMovie.bind(movie)}
+            >
+              <span className="material-icons">delete_forever</span>
             </button>
           </div>
         </div>
