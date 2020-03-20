@@ -9,15 +9,10 @@ class MovieItem extends React.Component {
     };
   }
   render() {
-    // console.log(
-    //   "MovieItem => this.state",
-    //   this.state,
-    //   "MovieItem => this.props",
-    //   this.props
-    // );
-    const { movie } = this.props;
+    console.log("--- MovieItem ---");
+    const { movie, removeMovie, appThis } = this.props;
+    // console.log("appThis", appThis, "single movie", movie);
     return (
-      // return <p> {movie.title} </p>;
       <div className="card">
         <img
           className="card-img-top"
@@ -26,7 +21,6 @@ class MovieItem extends React.Component {
           alt=""
         />
         <div className="card-body">
-          {/* {console.log("I CAN NOT see this state => ",this.state)} */}
           <p> {this.state.willWatch ? "NOT will" : "will"} </p>
           <h6 className="card-title">{movie.title}</h6>
           <div className="d-flex justify-content-between align-items-center">
@@ -54,7 +48,9 @@ class MovieItem extends React.Component {
               type="button"
               title="{movie.title}"
               className="btn btn-danger btn-sm mx-2"
-            //   onClick={removeMovie.bind(movie)}
+            //   onClick={ () => {console.log(this)} }
+              onClick={removeMovie.bind(appThis, movie) }
+            //   onClick={removeMovie(this, movie) }
             >
               <span className="material-icons">delete_forever</span>
             </button>

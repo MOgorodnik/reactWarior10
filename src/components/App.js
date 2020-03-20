@@ -2,6 +2,19 @@ import React from "react";
 import { moviesData } from "../moviesData";
 import MovieItem from "./MovieItem";
 
+function removeMovie (movie) {
+  console.log("/// removeMovie");
+  console.log(this, "MOVIE single", movie);
+
+  const updateMovies = this.state.movies.filter(function (item) {
+    return item.id  !== movie.id;
+  })
+  console.log(updateMovies);
+  this.setState({
+    movies: updateMovies
+  })
+}
+
 class App extends React.Component {
   constructor() {
     super();
@@ -15,12 +28,13 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log("App render", this.state, this.temp);
+    console.log("--- App ---");
+    console.log("App render", this.state);
     // console.log("App this", this.state.movies[1].title);
     return (
       <div className="container">
         <div className="row">
-          <MovieList movies={this.state.movies} />
+          <MovieList movies={this.state.movies} appThis = {this}/>
           <div className="col-4 col-sm-3 mt-4">
             <h4>Will Watch: {this.state.moviesWillWatch.length} movies</h4>
             <ul className="list-group">
@@ -37,18 +51,20 @@ class App extends React.Component {
 
 class MovieList extends React.Component {
   render() {
-    const { movies } = this.props;
-    // console.log("MovieList movies", movies);
+    const { movies, appThis } = this.props;
+    console.log("--- MovieList ---");
+    // console.log(this.props);
+    // console.log("MovieList movies", movies, removeMovie);
     return (
       <div className="col-8 col-sm-9">
         <div className="row">
           {movies.map(function(movie) {
             return (
               <div className="offset-1 col-10 offset-sm-0 col-sm-6 mt-4" key={movie.id}>
-                <MovieItem movie={movie} />
+                <MovieItem movie={movie} removeMovie={removeMovie} appThis = {appThis} />
               </div>
             );
-          })}
+          }, this)}
         </div>
       </div>
     );
