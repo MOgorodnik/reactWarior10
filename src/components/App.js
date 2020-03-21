@@ -27,6 +27,23 @@ class App extends React.Component {
     // this.removeMovie = this.removeMovie.bind(this);
   }
 
+  addMovieToWillWatch = (movie) => {
+    console.log(movie);
+    // this.state.moviesWillWatch.push(movie);
+    // const updateMoviesWillWatch = [...this.state.moviesWillWatch];
+    // updateMoviesWillWatch.push(movie);
+    
+    const updateMoviesWillWatch = [...this.state.moviesWillWatch, movie];
+
+    this.setState({
+      moviesWillWatch: updateMoviesWillWatch
+    })
+
+  }
+  removeMovieFromWillWatch = (movie) => {
+
+  }
+
   render() {
     console.log("--- App ---");
     console.log("App render", this.state);
@@ -34,7 +51,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <MovieList movies={this.state.movies} appThis = {this}/>
+          <MovieList movies={this.state.movies} appThis = {this} addMovieToWillWatch = {this.addMovieToWillWatch}/>
           <div className="col-4 col-sm-3 mt-4">
             <h4>Will Watch: {this.state.moviesWillWatch.length} movies</h4>
             <ul className="list-group">
@@ -51,9 +68,9 @@ class App extends React.Component {
 
 class MovieList extends React.Component {
   render() {
-    const { movies, appThis } = this.props;
+    const { movies, appThis, removeMovieFromWillWatch, addMovieToWillWatch } = this.props;
     console.log("--- MovieList ---");
-    // console.log(this.props);
+    console.log(this.props);
     // console.log("MovieList movies", movies, removeMovie);
     return (
       <div className="col-8 col-sm-9">
@@ -61,7 +78,7 @@ class MovieList extends React.Component {
           {movies.map(function(movie) {
             return (
               <div className="offset-1 col-10 offset-sm-0 col-sm-6 mt-4" key={movie.id}>
-                <MovieItem movie={movie} removeMovie={removeMovie} appThis = {appThis} />
+                <MovieItem movie={movie} removeMovie={removeMovie} appThis = {appThis} addMovieToWillWatch = {this.addMovieToWillWatch} removeMovieFromWillWatch = {removeMovieFromWillWatch} />
               </div>
             );
           }, this)}

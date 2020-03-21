@@ -10,7 +10,7 @@ class MovieItem extends React.Component {
   }
   render() {
     console.log("--- MovieItem ---");
-    const { movie, removeMovie, appThis } = this.props;
+    const { movie, removeMovie, appThis, addMovieToWillWatch, removeMovieFromWillWatch } = this.props;
     // console.log("appThis", appThis, "single movie", movie);
     return (
       <div className="card">
@@ -28,22 +28,31 @@ class MovieItem extends React.Component {
           </div>
 
           <div className="d-flex justify-content-end align-items-center mt-3">
-            <button
+            {this.state.willWatch === true ? (<button
               type="button"
               className="btn btn-info btn-sm"
               onClick={() => {
                 console.log("Clickkk", this.state.willWatch);
-                this.state.willWatch
-                  ? this.setState({
-                      willWatch: false
-                    })
-                  : this.setState({
-                      willWatch: true
-                    });
+                this.setState({
+                  willWatch: false
+                });
+                removeMovieFromWillWatch(movie);
               }}
             >
-              Will Watch
-            </button>
+              Remove Watch
+            </button>) : (<button
+              type="button"
+              className="btn btn-info btn-sm"
+              onClick={() => {
+                console.log("Clickkk", this.state.willWatch);
+                this.setState({
+                    willWatch: true
+                  });
+                  addMovieToWillWatch.bind(null, movie);
+              }}
+            >
+              Add Watch
+            </button>)}
             <button
               type="button"
               title="{movie.title}"
