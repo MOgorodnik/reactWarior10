@@ -9,9 +9,16 @@ class MovieItem extends React.Component {
     };
   }
   render() {
-    console.log("--- MovieItem ---");
-    const { movie, removeMovie, appThis, addMovieToWillWatch, removeMovieFromWillWatch } = this.props;
+    // console.log("--- MovieItem ---");
+    const {
+      movie,
+      removeMovie,
+      appThis,
+      addMovieToWillWatch,
+      removeMovieFromWillWatch
+    } = this.props;
     // console.log("appThis", appThis, "single movie", movie);
+    // console.log("/// this.props", this.props)
     return (
       <div className="card">
         <img
@@ -21,45 +28,50 @@ class MovieItem extends React.Component {
           alt=""
         />
         <div className="card-body">
-          <p> {this.state.willWatch ? "NOT will" : "will"} </p>
+          {/* <p> {this.state.willWatch ? "NOT will" : "will"} </p> */}
           <h6 className="card-title">{movie.title}</h6>
-          <div className="d-flex justify-content-between align-items-center">
-            <p className="mb-0">Rating: {movie.vote_average}</p>
-          </div>
-
           <div className="d-flex justify-content-end align-items-center mt-3">
-            {this.state.willWatch === true ? (<button
-              type="button"
-              className="btn btn-info btn-sm"
-              onClick={() => {
-                console.log("Clickkk", this.state.willWatch);
-                this.setState({
-                  willWatch: false
-                });
-                removeMovieFromWillWatch(movie);
-              }}
-            >
-              Remove Watch
-            </button>) : (<button
-              type="button"
-              className="btn btn-info btn-sm"
-              onClick={() => {
-                console.log("Clickkk", this.state.willWatch);
-                this.setState({
+            {this.state.willWatch === true ? (
+              <button
+                type="button"
+                className="btn btn-danger btn-sm"
+                onClick={() => {
+                  console.log("Click for remove", this.state.willWatch);
+                  this.setState({
+                    willWatch: false
+                  });
+                  removeMovieFromWillWatch(movie);
+                }}
+              >
+                Remove Watch
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="btn btn-success btn-sm"
+                // onClick={
+                //   addMovieToWillWatch.bind(null, movie)
+                // }
+                onClick={() => {
+                  console.log("Click for add", movie, typeof addMovieToWillWatch);
+                  this.setState({
                     willWatch: true
                   });
-                  addMovieToWillWatch.bind(null, movie);
-              }}
-            >
-              Add Watch
-            </button>)}
+                  addMovieToWillWatch(movie);
+                }
+              }
+              >
+                Add Watch
+              </button>
+            )}
+
             <button
               type="button"
               title="{movie.title}"
               className="btn btn-danger btn-sm mx-2"
-            //   onClick={ () => {console.log(this)} }
-              onClick={removeMovie.bind(appThis, movie) }
-            //   onClick={removeMovie(this, movie) }
+              //   onClick={ () => {console.log(this)} }
+              onClick={removeMovie.bind(appThis, movie)}
+              //   onClick={removeMovie(this, movie) }
             >
               <span className="material-icons">delete_forever</span>
             </button>
