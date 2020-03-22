@@ -61,6 +61,7 @@ class App extends React.Component {
             movies={this.state.movies}
             appThis={this}
             addMovieToWillWatch={this.addMovieToWillWatch}
+            removeMovieFromWillWatch={this.removeMovieFromWillWatch}
           />
           <div className="col-4 col-sm-3 mt-4">
             <div className="sticky-top">
@@ -104,9 +105,11 @@ class MovieList extends React.Component {
                   appThis={appThis}
                   addMovieToWillWatch={addMovieToWillWatch.bind(
                     appThis,
-                    addMovieToWillWatch
+                    movie // Почитай за bind Ты аргументом передаёшь функцию Вот она тебе и добавляется
                   )}
-                  removeMovieFromWillWatch={removeMovieFromWillWatch}
+                  removeMovieFromWillWatch={removeMovieFromWillWatch.bind(
+                    appThis,
+                    movie)}
                 />
               </div>
             );

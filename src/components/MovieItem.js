@@ -19,6 +19,7 @@ class MovieItem extends React.Component {
     } = this.props;
     // console.log("appThis", appThis, "single movie", movie);
     // console.log("/// this.props", this.props)
+    console.log("/// addMovieToWillWatch \n", this.props)
     return (
       <div className="card">
         <img
@@ -49,15 +50,12 @@ class MovieItem extends React.Component {
               <button
                 type="button"
                 className="btn btn-success btn-sm"
-                // onClick={
-                //   addMovieToWillWatch.bind(null, movie)
-                // }
                 onClick={() => {
-                  console.log("Click for add", movie, typeof addMovieToWillWatch);
+                  console.log("Click for add", movie, "\n", addMovieToWillWatch);
                   this.setState({
                     willWatch: true
                   });
-                  addMovieToWillWatch(movie);
+                  addMovieToWillWatch(movie)
                 }
               }
               >
